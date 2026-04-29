@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <title>NCM</title>
 
   <style>
@@ -41,27 +41,21 @@
 
     button {
       padding: 10px 20px;
+      font-size: 14px;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       background-color: #2d72d9;
       color: white;
-      font-size: 14px;
     }
 
     button.selected {
       background-color: #28a745;
     }
 
-    button:disabled {
-      background-color: #9aa4b2;
-      cursor: not-allowed;
-      opacity: 0.7;
-    }
-
     .iteration-container {
       display: none;
-      margin-top: 20px;
+      margin-top: 20px; /* spacing between DSL and iteration */
     }
 
     h2 a {
@@ -73,191 +67,191 @@
 </head>
 
 <body>
-<h1>NCM</h1>
+  <h1>NCM</h1>
 
-<!-- NCM Version -->
-<div>
-  <label>NCM Versions:</label>
-  <select id="versionSelect">
-    <option value="">-- Select NCM Version --</option>
-    <option value="2.0.0">2.0.0</option>
-    <option value="2.1.0">2.1.0</option>
-    <option value="2.2.0">2.2.0</option>
-  </select>
-</div>
-
-<!-- Blueprint Section -->
-<div id="blueprintSection" class="section">
-  <h2>
-    <a href="https://github.com/ncmsolution/ncm-blueprint" target="_blank">
-      Blueprints
-    </a>
-  </h2>
-
-  <div class="blueprint-buttons">
-    <button data-blueprint="Foundation-Lite">Foundation‑Lite</button>
-    <button data-blueprint="Intermediate-Pro">Intermediate‑Pro</button>
-    <button data-blueprint="Comprehensive-Enterprise">
-      Comprehensive‑Enterprise
-    </button>
+  <!-- NCM Version -->
+  <div>
+    <label>NCM Versions:</label>
+    <select id="versionSelect">
+      <option value="">-- Select NCM Version --</option>
+      <option value="2.0.0">2.0.0</option>
+      <option value="2.1.0">2.1.0</option>
+      <option value="2.2.0">2.2.0</option>
+    </select>
   </div>
-</div>
 
-<!-- DSL / UI -->
-<div id="actionButtons" class="section button-container">
-  <button id="dslBtn">DSL</button>
-  <button id="uiBtn">UI</button>
-</div>
+  <!-- Blueprint Section -->
+  <div id="blueprintSection" class="section">
+    <h2>
+      <a href="https://github.com/ncmsolution/ncm-blueprint" target="_blank">
+        Blueprints
+      </a>
+    </h2>
 
-<!-- DSL Iteration -->
-<div id="dslIteration" class="iteration-container">
-  <label>DSL Iteration:</label>
-  <select id="dslIter">
-    <option value="">-- Select Iteration --</option>
-    <script>
-      for (let i = 1; i <= 10; i++) {
-        document.write(`<option value="${i}">${i}</option>`);
-      }
-    </script>
-  </select>
-</div>
+    <div class="blueprint-buttons">
+      <button data-blueprint="Foundation-Lite">Foundation‑Lite</button>
+      <button data-blueprint="Intermediate-Pro">Intermediate‑Pro</button>
+      <button data-blueprint="Comprehensive-Enterprise">
+        Comprehensive‑Enterprise
+      </button>
+    </div>
+  </div>
 
-<!-- DSL Actions -->
-<div id="dslActions" class="button-container" style="display:none;">
-  <button id="launchBtn">Launch</button>
-  <button id="deleteBtn">Delete</button>
-  <button id="statsBtn">Stats</button>
-</div>
+  <!-- DSL / UI -->
+  <div id="actionButtons" class="section button-container">
+    <button id="dslBtn">DSL</button>
+    <button id="uiBtn">UI</button>
+  </div>
 
-<!-- UI Iteration -->
-<div id="uiIteration" class="iteration-container">
-  <label>UI Iteration:</label>
-  <select>
-    <option value="">-- Select Iteration --</option>
-    <script>
-      for (let i = 1; i <= 10; i++) {
-        document.write(`<option value="${i}">${i}</option>`);
-      }
-    </script>
-  </select>
-</div>
+  <!-- DSL Iteration -->
+  <div id="dslIteration" class="iteration-container">
+    <label>DSL Iteration:</label>
+    <select id="dslIter">
+      <option value="">-- Select Iteration --</option>
+      <script>
+        for (let i = 1; i <= 10; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+  </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const versionSelect = document.getElementById("versionSelect");
-  const blueprintSection = document.getElementById("blueprintSection");
-  const actionButtons = document.getElementById("actionButtons");
-  const dslBtn = document.getElementById("dslBtn");
-  const uiBtn = document.getElementById("uiBtn");
-  const dslIteration = document.getElementById("dslIteration");
-  const uiIteration = document.getElementById("uiIteration");
-  const dslActions = document.getElementById("dslActions");
-  const dslIter = document.getElementById("dslIter");
-  const blueprintButtons =
-    document.querySelectorAll(".blueprint-buttons button");
+  <!-- DSL Actions -->
+  <div id="dslActions" class="button-container" style="display:none;">
+    <button id="launchBtn">Launch</button>
+    <button id="deleteBtn">Delete</button>
+    <button id="statsBtn">Stats</button>
+  </div>
 
-  const SHEET_ID = "1b2twKC7Cr62uIMP0loYAkVunS-97Uu0UGA4vz6tVYVI";
+  <!-- UI Iteration -->
+  <div id="uiIteration" class="iteration-container">
+    <label>UI Iteration:</label>
+    <select>
+      <option value="">-- Select Iteration --</option>
+      <script>
+        for (let i = 1; i <= 10; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+  </div>
 
-  const iterationToGidMap = {
-    1: "0",
-    2: "149207734",
-    3: "269643439",
-    4: "577460575"
-  };
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const versionSelect = document.getElementById("versionSelect");
+      const blueprintSection = document.getElementById("blueprintSection");
+      const actionButtons = document.getElementById("actionButtons");
+      const dslBtn = document.getElementById("dslBtn");
+      const uiBtn = document.getElementById("uiBtn");
+      const dslIteration = document.getElementById("dslIteration");
+      const uiIteration = document.getElementById("uiIteration");
+      const dslActions = document.getElementById("dslActions");
+      const blueprintButtons =
+        document.querySelectorAll(".blueprint-buttons button");
+      const dslIter = document.getElementById("dslIter");
 
-  const iterationToStatsLink = {
-    1: "Iteration1.html",
-    2: "Iteration2.html",
-    3: "Iteration3.html",
-    4: "Iteration4.html"
-  };
+      const SHEET_ID =
+        "1b2twKC7Cr62uIMP0loYAkVunS-97Uu0UGA4vz6tVYVI";
 
-  let selectedBlueprint = "";
-  let selectedMode = "";
+      const iterationToGidMap = {
+        1: "0",
+        2: "149207734",
+        3: "269643439",
+        4: "577460575"
+      };
 
-  /* Initial state */
-  blueprintSection.style.display = "none";
-  actionButtons.style.display = "none";
-  dslIteration.style.display = "none";
-  uiIteration.style.display = "none";
-  dslActions.style.display = "none";
+      /* ✅ Apps Script Web App (Stats – Iteration 1) */
+      const STATS_WEB_APP_URL =
+        "https://script.google.com/a/macros/nutanix.com/s/AKfycbweEeCw2J3WeBHnlPk_4E0p8vUnSUdA0Dkeu754CqpROBtY4cI9YRfUIIaEj4aDDeqV/exec";
 
-  /* Version select */
-  versionSelect.onchange = () => {
-    blueprintSection.style.display = versionSelect.value ? "block" : "none";
-    actionButtons.style.display = "none";
-    dslIteration.style.display = "none";
-    uiIteration.style.display = "none";
-    dslActions.style.display = "none";
-  };
+      let selectedBlueprint = "";
+      let selectedMode = "";
 
-  /* Blueprint click */
-  blueprintButtons.forEach(btn => {
-    btn.onclick = () => {
-      selectedBlueprint = btn.dataset.blueprint;
-      blueprintButtons.forEach(b => b.classList.remove("selected"));
-      btn.classList.add("selected");
-      actionButtons.style.display = "flex";
-    };
-  });
+      /* Initial state */
+      blueprintSection.style.display = "none";
+      actionButtons.style.display = "none";
+      dslIteration.style.display = "none";
+      uiIteration.style.display = "none";
+      dslActions.style.display = "none";
 
-  /* DSL click */
-  dslBtn.onclick = () => {
-    selectedMode = "DSL";
-    dslBtn.classList.add("selected");
-    uiBtn.classList.remove("selected");
-    dslIteration.style.display = "block";
-    uiIteration.style.display = "none";
-    dslActions.style.display = "flex";
-  };
+      /* Version select */
+      versionSelect.addEventListener("change", () => {
+        blueprintSection.style.display =
+          versionSelect.value ? "block" : "none";
 
-  /* UI click */
-  uiBtn.onclick = () => {
-    selectedMode = "UI";
-    uiBtn.classList.add("selected");
-    dslBtn.classList.remove("selected");
-    uiIteration.style.display = "block";
-    dslIteration.style.display = "none";
-    dslActions.style.display = "none";
-  };
+        actionButtons.style.display = "none";
+        dslIteration.style.display = "none";
+        uiIteration.style.display = "none";
+        dslActions.style.display = "none";
 
-  /* Launch */
-  document.getElementById("launchBtn").onclick = () => {
-    const i = dslIter.value;
-    if (!i) {
-      alert("Please select a DSL iteration.");
-      return;
-    }
+        blueprintButtons.forEach(b => b.classList.remove("selected"));
+        dslBtn.classList.remove("selected");
+        uiBtn.classList.remove("selected");
+        dslIter.value = "";
+      });
 
-    if (
-      versionSelect.value === "2.0.0" &&
-      selectedBlueprint === "Comprehensive-Enterprise" &&
-      selectedMode === "DSL" &&
-      iterationToGidMap[i]
-    ) {
-      window.open(
-        `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${iterationToGidMap[i]}`,
-        "_blank"
-      );
-    } else {
-      alert("No sheet mapped for this selection.");
-    }
-  };
+      /* Blueprint click */
+      blueprintButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          selectedBlueprint = btn.dataset.blueprint;
+          blueprintButtons.forEach(b => b.classList.remove("selected"));
+          btn.classList.add("selected");
+          actionButtons.style.display = "flex";
+        });
+      });
 
-  /* Stats */
-  document.getElementById("statsBtn").onclick = () => {
-    const url = iterationToStatsLink[dslIter.value];
-    if (!url) {
-      alert("No stats file for this iteration.");
-      return;
-    }
-    window.open(url, "_blank");
-  };
+      /* DSL click */
+      dslBtn.addEventListener("click", () => {
+        selectedMode = "DSL";
+        dslBtn.classList.add("selected");
+        uiBtn.classList.remove("selected");
+        dslIteration.style.display = "block";
+        uiIteration.style.display = "none";
+        dslActions.style.display = "flex";
+      });
 
-  document.getElementById("deleteBtn").onclick =
-    () => alert("Delete action not implemented");
-});
-</script>
+      /* UI click */
+      uiBtn.addEventListener("click", () => {
+        selectedMode = "UI";
+        uiBtn.classList.add("selected");
+        dslBtn.classList.remove("selected");
+        uiIteration.style.display = "block";
+        dslIteration.style.display = "none";
+        dslActions.style.display = "none";
+      });
+
+      /* Launch → Google Sheet */
+      document.getElementById("launchBtn").addEventListener("click", () => {
+        const iteration = dslIter.value;
+        if (!iteration) {
+          alert("Please select a DSL iteration.");
+          return;
+        }
+
+        if (
+          versionSelect.value === "2.0.0" &&
+          selectedBlueprint === "Comprehensive-Enterprise" &&
+          selectedMode === "DSL" &&
+          iterationToGidMap[iteration]
+        ) {
+          const url =
+            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${iterationToGidMap[iteration]}`;
+          window.open(url, "_blank");
+        }
+      });
+
+      /* ✅ Stats → Apps Script Web App (Iteration 1 only) */
+      document.getElementById("statsBtn").addEventListener("click", () => {
+        if (dslIter.value === "1") {
+          window.open(STATS_WEB_APP_URL, "_blank");
+        } else {
+          alert("Stats is available only for DSL Iteration 1.");
+        }
+      });
+
+      document.getElementById("deleteBtn").onclick = () =>
+        alert("Delete action not implemented");
+    });
+  </script>
 </body>
 </html>
-``
