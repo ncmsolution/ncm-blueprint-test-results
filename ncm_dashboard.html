@@ -24,7 +24,7 @@
     select {
       padding: 8px;
       font-size: 14px;
-      min-width: 220px;
+      min-width: 240px;
     }
 
     .section {
@@ -32,8 +32,7 @@
       display: none;
     }
 
-    .blueprint-buttons,
-    .button-container {
+    .blueprint-buttons {
       display: flex;
       gap: 15px;
       margin-top: 15px;
@@ -55,7 +54,7 @@
 
     .iteration-container {
       display: none;
-      margin-top: 20px; /* spacing between DSL and iteration */
+      margin-top: 20px;
     }
 
     h2 a {
@@ -63,195 +62,202 @@
       color: #2d72d9;
       font-weight: bold;
     }
+
+    #csvResultSection {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 
 <body>
-  <h1>NCM</h1>
+<h1>NCM</h1>
 
-  <!-- NCM Version -->
-  <div>
-    <label>NCM Versions:</label>
-    <select id="versionSelect">
-      <option value="">-- Select NCM Version --</option>
-      <option value="2.0.0">2.0.0</option>
-      <option value="2.1.0">2.1.0</option>
-      <option value="2.2.0">2.2.0</option>
-    </select>
+<!-- NCM Version -->
+<div>
+  <label>NCM Versions:</label>
+  <select id="versionSelect">
+    <option value="">-- Select NCM Version --</option>
+    <option value="2.0.0">2.0.0</option>
+    <option value="2.1.0">2.1.0</option>
+    <option value="2.2.0">2.2.0</option>
+  </select>
+</div>
+
+<!-- Blueprint Section -->
+<div id="blueprintSection" class="section">
+  <h2>
+    <a href="https://github.com/ncmsolution/ncm-blueprint" target="_blank">
+      Blueprints
+    </a>
+  </h2>
+  <div class="blueprint-buttons">
+    <button data-blueprint="Foundation-Lite">Foundation‑Lite</button>
+    <button data-blueprint="Intermediate-Pro">Intermediate‑Pro</button>
+    <button data-blueprint="Comprehensive-Enterprise">
+      Comprehensive‑Enterprise
+    </button>
   </div>
+</div>
 
-  <!-- Blueprint Section -->
-  <div id="blueprintSection" class="section">
-    <h2>
-      <a href="https://github.com/ncmsolution/ncm-blueprint" target="_blank">
-        Blueprints
-      </a>
-    </h2>
+<!-- Automation -->
+<div id="automationSection" class="section">
+  <label>Automation Type:</label>
+  <select id="automationType">
+    <option value="">-- Select Automation Type --</option>
+    <option value="DSL">DSL</option>
+    <option value="UI">UI</option>
+  </select>
+</div>
 
-    <div class="blueprint-buttons">
-      <button data-blueprint="Foundation-Lite">Foundation‑Lite</button>
-      <button data-blueprint="Intermediate-Pro">Intermediate‑Pro</button>
-      <button data-blueprint="Comprehensive-Enterprise">
-        Comprehensive‑Enterprise
-      </button>
-    </div>
-  </div>
+<!-- DSL Iteration -->
+<div id="dslIteration" class="iteration-container">
+  <label>DSL Iteration:</label>
+  <select id="dslIter">
+    <option value="">-- Select Iteration --</option>
+    <script>
+      for (let i = 1; i <= 10; i++) {
+        document.write(`<option value="${i}">${i}</option>`);
+      }
+    </script>
+  </select>
+</div>
 
-  <!-- DSL / UI -->
-  <div id="actionButtons" class="section button-container">
-    <button id="dslBtn">DSL</button>
-    <button id="uiBtn">UI</button>
-  </div>
+<!-- Result -->
+<div id="resultSection" class="iteration-container">
+  <label>Result:</label>
+  <select id="resultType">
+    <option value="">-- Select Result --</option>
+    <option value="Launch">Launch</option>
+    <option value="Delete">Delete</option>
+    <option value="Stats">Stats</option>
+  </select>
+</div>
 
-  <!-- DSL Iteration -->
-  <div id="dslIteration" class="iteration-container">
-    <label>DSL Iteration:</label>
-    <select id="dslIter">
-      <option value="">-- Select Iteration --</option>
-      <script>
-        for (let i = 1; i <= 10; i++) {
-          document.write(`<option value="${i}">${i}</option>`);
-        }
-      </script>
-    </select>
-  </div>
+<!-- Hidden CSV Input -->
+<input
+  type="file"
+  id="csvFileInput"
+  accept=".csv"
+  style="display:none"
+/>
 
-  <!-- DSL Actions -->
-  <div id="dslActions" class="button-container" style="display:none;">
-    <button id="launchBtn">Launch</button>
-    <button id="deleteBtn">Delete</button>
-    <button id="statsBtn">Stats</button>
-  </div>
+<!-- CSV Result Summary -->
+<div id="csvResultSection" class="section">
+  <h2>Provisioning Result Summary</h2>
 
-  <!-- UI Iteration -->
-  <div id="uiIteration" class="iteration-container">
-    <label>UI Iteration:</label>
-    <select>
-      <option value="">-- Select Iteration --</option>
-      <script>
-        for (let i = 1; i <= 10; i++) {
-          document.write(`<option value="${i}">${i}</option>`);
-        }
-      </script>
-    </select>
-  </div>
+  <p style="color:green; font-size:18px;">
+    ✅ Success (RUNNING):
+    <strong><span id="successCount">0</span></strong>
+  </p>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const versionSelect = document.getElementById("versionSelect");
-      const blueprintSection = document.getElementById("blueprintSection");
-      const actionButtons = document.getElementById("actionButtons");
-      const dslBtn = document.getElementById("dslBtn");
-      const uiBtn = document.getElementById("uiBtn");
-      const dslIteration = document.getElementById("dslIteration");
-      const uiIteration = document.getElementById("uiIteration");
-      const dslActions = document.getElementById("dslActions");
-      const blueprintButtons =
-        document.querySelectorAll(".blueprint-buttons button");
-      const dslIter = document.getElementById("dslIter");
+  <p style="color:red; font-size:18px;">
+    ❌ Fail / Error:
+    <strong><span id="errorCount">0</span></strong>
+  </p>
+</div>
 
-      const SHEET_ID =
-        "1b2twKC7Cr62uIMP0loYAkVunS-97Uu0UGA4vz6tVYVI";
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const versionSelect = document.getElementById("versionSelect");
+  const blueprintSection = document.getElementById("blueprintSection");
+  const automationSection = document.getElementById("automationSection");
+  const automationType = document.getElementById("automationType");
+  const dslIteration = document.getElementById("dslIteration");
+  const resultSection = document.getElementById("resultSection");
+  const resultType = document.getElementById("resultType");
+  const dslIter = document.getElementById("dslIter");
 
-      const iterationToGidMap = {
-        1: "0",
-        2: "149207734",
-        3: "269643439",
-        4: "577460575"
-      };
+  const blueprintButtons = document.querySelectorAll(".blueprint-buttons button");
 
-      /* ✅ Apps Script Web App (Stats – Iteration 1) */
-      const STATS_WEB_APP_URL =
-        "https://script.google.com/a/macros/nutanix.com/s/AKfycbweEeCw2J3WeBHnlPk_4E0p8vUnSUdA0Dkeu754CqpROBtY4cI9YRfUIIaEj4aDDeqV/exec";
+  const SHEET_ID = "1b2twKC7Cr62uIMP0loYAkVunS-97Uu0UGA4vz6tVYVI";
 
-      let selectedBlueprint = "";
-      let selectedMode = "";
+  const iterationToGidMap = {
+    1: "0",
+    2: "149207734",
+    3: "269643439",
+    4: "577460575"
+  };
 
-      /* Initial state */
-      blueprintSection.style.display = "none";
-      actionButtons.style.display = "none";
-      dslIteration.style.display = "none";
-      uiIteration.style.display = "none";
-      dslActions.style.display = "none";
+  versionSelect.addEventListener("change", () => {
+    blueprintSection.style.display = versionSelect.value ? "block" : "none";
+    automationSection.style.display = "none";
+    dslIteration.style.display = "none";
+    resultSection.style.display = "none";
+  });
 
-      /* Version select */
-      versionSelect.addEventListener("change", () => {
-        blueprintSection.style.display =
-          versionSelect.value ? "block" : "none";
-
-        actionButtons.style.display = "none";
-        dslIteration.style.display = "none";
-        uiIteration.style.display = "none";
-        dslActions.style.display = "none";
-
-        blueprintButtons.forEach(b => b.classList.remove("selected"));
-        dslBtn.classList.remove("selected");
-        uiBtn.classList.remove("selected");
-        dslIter.value = "";
-      });
-
-      /* Blueprint click */
-      blueprintButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-          selectedBlueprint = btn.dataset.blueprint;
-          blueprintButtons.forEach(b => b.classList.remove("selected"));
-          btn.classList.add("selected");
-          actionButtons.style.display = "flex";
-        });
-      });
-
-      /* DSL click */
-      dslBtn.addEventListener("click", () => {
-        selectedMode = "DSL";
-        dslBtn.classList.add("selected");
-        uiBtn.classList.remove("selected");
-        dslIteration.style.display = "block";
-        uiIteration.style.display = "none";
-        dslActions.style.display = "flex";
-      });
-
-      /* UI click */
-      uiBtn.addEventListener("click", () => {
-        selectedMode = "UI";
-        uiBtn.classList.add("selected");
-        dslBtn.classList.remove("selected");
-        uiIteration.style.display = "block";
-        dslIteration.style.display = "none";
-        dslActions.style.display = "none";
-      });
-
-      /* Launch → Google Sheet */
-      document.getElementById("launchBtn").addEventListener("click", () => {
-        const iteration = dslIter.value;
-        if (!iteration) {
-          alert("Please select a DSL iteration.");
-          return;
-        }
-
-        if (
-          versionSelect.value === "2.0.0" &&
-          selectedBlueprint === "Comprehensive-Enterprise" &&
-          selectedMode === "DSL" &&
-          iterationToGidMap[iteration]
-        ) {
-          const url =
-            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${iterationToGidMap[iteration]}`;
-          window.open(url, "_blank");
-        }
-      });
-
-      /* ✅ Stats → Apps Script Web App (Iteration 1 only) */
-      document.getElementById("statsBtn").addEventListener("click", () => {
-        if (dslIter.value === "1") {
-          window.open(STATS_WEB_APP_URL, "_blank");
-        } else {
-          alert("Stats is available only for DSL Iteration 1.");
-        }
-      });
-
-      document.getElementById("deleteBtn").onclick = () =>
-        alert("Delete action not implemented");
+  blueprintButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      blueprintButtons.forEach(b => b.classList.remove("selected"));
+      btn.classList.add("selected");
+      automationSection.style.display = "block";
     });
-  </script>
+  });
+
+  automationType.addEventListener("change", () => {
+    dslIteration.style.display = automationType.value === "DSL" ? "block" : "none";
+    resultSection.style.display = automationType.value ? "block" : "none";
+  });
+
+  resultType.addEventListener("change", () => {
+    const iteration = dslIter.value;
+
+    if (resultType.value === "Launch") {
+      if (!iteration) return alert("Select DSL iteration");
+      const gid = iterationToGidMap[iteration];
+      if (gid)
+        window.open(
+          `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${gid}`,
+          "_blank"
+        );
+
+      // ✅ Trigger CSV selection
+      document.getElementById("csvFileInput").click();
+    }
+  });
+});
+
+// CSV Parsing Logic
+document.getElementById("csvFileInput").addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function (event) {
+    const csvText = event.target.result;
+    parseCSV(csvText);
+  };
+  reader.readAsText(file);
+});
+
+function parseCSV(csvText) {
+  const lines = csvText.trim().split("\n");
+  const headers = lines[0].split(",");
+
+  const stateIndex = headers.findIndex(h =>
+    h.trim().toLowerCase() === "state"
+  );
+
+  let success = 0;
+  let error = 0;
+
+  for (let i = 1; i < lines.length; i++) {
+    if (!lines[i]) continue;
+    const cols = lines[i].split(",");
+    const state = cols[stateIndex]?.trim().toLowerCase();
+
+    if (state === "running") success++;
+    else if (state === "error" || state === "failed" || state === "fail")
+      error++;
+  }
+
+  document.getElementById("successCount").textContent = success;
+  document.getElementById("errorCount").textContent = error;
+  document.getElementById("csvResultSection").style.display = "block";
+}
+</script>
+
 </body>
 </html>
