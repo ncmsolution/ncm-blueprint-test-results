@@ -1,262 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>NCM</title>
+<meta charset="UTF-8">
+<title>NCM Dashboard</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f6f8fb;
-    }
+<style>
 
-    h1 {
-      font-size: 36px;
-      color: #243447;
-    }
+body {
+  font-family: "Segoe UI", Arial;
+  margin: 0;
+  background:#f4f6fb;
+}
 
-    label {
-      font-weight: bold;
-      margin-right: 10px;
-    }
+/* ✅ HEADER */
 
-    select {
-      padding: 8px;
-      font-size: 14px;
-      min-width: 240px;
-    }
+.header {
+  background: linear-gradient(90deg, #5b2be0, #7c4dff);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;   /* ✅ center horizontally */
+  align-items: center;
+}
 
-    .section {
-      margin-top: 30px;
-      display: none;
-    }
+.header h1 {
+  margin: 0;
+  font-size: 26px;
+  text-align: center;
+}
 
-    .blueprint-buttons {
-      display: flex;
-      gap: 15px;
-      margin-top: 15px;
-    }
 
-    button {
-      padding: 10px 20px;
-      font-size: 14px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background-color: #2d72d9;
-      color: white;
-    }
+/* ✅ CONTAINER */
+.container {
+  padding: 30px 40px;
+}
 
-    button.selected {
-      background-color: #28a745;
-    }
+/* ✅ CARD */
+.card {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom:20px;
+}
 
-    .iteration-container {
-      display: none;
-      margin-top: 20px;
-    }
+/* ✅ INPUTS */
+select {
+  padding:10px;
+  min-width:260px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  margin-top:10px;
+}
 
-    h2 a {
-      text-decoration: none;
-      color: #2d72d9;
-      font-weight: bold;
-    }
+/* ✅ TABLE */
+table {
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
 
-    #csvResultSection {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-  </style>
+th {
+  background:#5b2be0;
+  color:white;
+  padding:12px;
+}
+
+td {
+  padding:12px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+/* ✅ STATUS COLORS */
+.success { color:green; font-weight:bold; }
+.error { color:red; font-weight:bold; }
+
+/* ✅ HIDE */
+.hidden { display:none; }
+
+</style>
 </head>
 
 <body>
-<h1>NCM</h1>
 
-<!-- NCM Version -->
-<div>
-  <label>NCM Versions:</label>
+<!-- ✅ HEADER -->
+<div class="header">
+<!--  <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Nutanix_logo.svg">-->
+  <h1>NCM Dashboard</h1>
+</div>
+
+<div class="container">
+
+<!-- VERSION -->
+<div class="card">
+  <label><b>NCM Version</b></label><br>
   <select id="versionSelect">
-    <option value="">-- Select NCM Version --</option>
-    <option value="2.0.0">2.0.0</option>
-    <option value="2.1.0">2.1.0</option>
-    <option value="2.2.0">2.2.0</option>
+    <option value="">-- Select --</option>
+    <option>2.0.0</option>
+    <option>2.1.0</option>
+    <option>2.2.0</option>
   </select>
 </div>
 
-<!-- Blueprint Section -->
-<div id="blueprintSection" class="section">
-  <h2>
-    <a href="https://github.com/ncmsolution/ncm-blueprint" target="_blank">
-      Blueprints
-    </a>
-  </h2>
-  <div class="blueprint-buttons">
-    <button data-blueprint="Foundation-Lite">Foundation‑Lite</button>
-    <button data-blueprint="Intermediate-Pro">Intermediate‑Pro</button>
-    <button data-blueprint="Comprehensive-Enterprise">
-      Comprehensive‑Enterprise
-    </button>
-  </div>
+<!-- BLUEPRINT -->
+<div id="blueprintSection" class="card hidden">
+  <label><b>Blueprint</b></label><br>
+  <select id="blueprintSelect">
+    <option value="">-- Select --</option>
+    <option>Foundation‑Lite</option>
+    <option>Intermediate‑Pro</option>
+    <option>Comprehensive‑Enterprise</option>
+  </select>
 </div>
 
-<!-- Automation -->
-<div id="automationSection" class="section">
-  <label>Automation Type:</label>
+<!-- AUTOMATION -->
+<div id="automationSection" class="card hidden">
+  <label><b>Automation Type</b></label><br>
   <select id="automationType">
-    <option value="">-- Select Automation Type --</option>
+    <option value="">-- Select --</option>
     <option value="DSL">DSL</option>
     <option value="UI">UI</option>
   </select>
 </div>
 
-<!-- DSL Iteration -->
-<div id="dslIteration" class="iteration-container">
-  <label>DSL Iteration:</label>
+<!-- DSL -->
+<div id="dslIteration" class="card hidden">
+  <label><b>DSL</b></label><br>
   <select id="dslIter">
     <option value="">-- Select Iteration --</option>
-    <script>
-      for (let i = 1; i <= 10; i++) {
-        document.write(`<option value="${i}">${i}</option>`);
-      }
-    </script>
   </select>
 </div>
 
-<!-- Result -->
-<div id="resultSection" class="iteration-container">
-  <label>Result:</label>
+<!-- RESULT -->
+<div id="resultSection" class="card hidden">
+  <label><b>Result</b></label><br>
   <select id="resultType">
-    <option value="">-- Select Result --</option>
+    <option value="">-- Select --</option>
     <option value="Launch">Launch</option>
     <option value="Stats">Stats</option>
     <option value="Delete">Delete</option>
   </select>
 </div>
 
-<!-- Hidden CSV Input -->
-<input
-  type="file"
-  id="csvFileInput"
-  accept=".csv"
-  style="display:none"
-/>
+<input type="file" id="fileInput" style="display:none">
 
-<!-- CSV Result Summary -->
-<div id="csvResultSection" class="section">
-  <h2>Provisioning Result Summary</h2>
+<!-- SUMMARY -->
+<div id="summaryCard" class="card hidden">
 
-  <p style="color:green; font-size:18px;">
-    ✅ Success (RUNNING):
-    <strong><span id="successCount">0</span></strong>
-  </p>
+  <h2>Provisioning Summary</h2>
 
-  <p style="color:red; font-size:18px;">
-    ❌ Fail / Error:
-    <strong><span id="errorCount">0</span></strong>
-  </p>
+  <table>
+    <tr><th>Status</th><th>Count</th><th>%</th></tr>
+
+    <tr>
+      <td class="success">SUCCESS</td>
+      <td id="successCount">0</td>
+      <td id="successPercent">0%</td>
+    </tr>
+
+    <tr>
+      <td class="error">ERROR</td>
+      <td id="errorCount">0</td>
+      <td id="errorPercent">0%</td>
+    </tr>
+
+    <tr>
+      <td><b>Total</b></td>
+      <td id="totalCount">0</td>
+      <td>100%</td>
+    </tr>
+  </table>
+
+  <table id="resultTable">
+    <thead id="errorTableHead"></thead>
+    <tbody id="errorTableBody"></tbody>
+  </table>
+
+</div>
+
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const versionSelect = document.getElementById("versionSelect");
-  const blueprintSection = document.getElementById("blueprintSection");
-  const automationSection = document.getElementById("automationSection");
-  const automationType = document.getElementById("automationType");
-  const dslIteration = document.getElementById("dslIteration");
-  const resultSection = document.getElementById("resultSection");
-  const resultType = document.getElementById("resultType");
-  const dslIter = document.getElementById("dslIter");
 
-  const blueprintButtons = document.querySelectorAll(".blueprint-buttons button");
+// DSL
+let iter=document.getElementById("dslIter");
+for(let i=1;i<=10;i++){
+  let o=document.createElement("option");
+  o.text=i; iter.add(o);
+}
 
-  const SHEET_ID = "1b2twKC7Cr62uIMP0loYAkVunS-97Uu0UGA4vz6tVYVI";
+// ELEMENTS
+let version=document.getElementById("versionSelect");
+let blueprint=document.getElementById("blueprintSection");
+let bpSelect=document.getElementById("blueprintSelect");
+let automation=document.getElementById("automationSection");
+let autoType=document.getElementById("automationType");
+let dsl=document.getElementById("dslIteration");
+let result=document.getElementById("resultSection");
+let resultType=document.getElementById("resultType");
+let summary=document.getElementById("summaryCard");
 
-  const iterationToGidMap = {
-    1: "0",
-    2: "149207734",
-    3: "269643439",
-    4: "577460575"
-  };
+// FLOW
+version.onchange=()=> blueprint.classList.remove("hidden");
+bpSelect.onchange=()=> automation.classList.remove("hidden");
 
-  versionSelect.addEventListener("change", () => {
-    blueprintSection.style.display = versionSelect.value ? "block" : "none";
-    automationSection.style.display = "none";
-    dslIteration.style.display = "none";
-    resultSection.style.display = "none";
-  });
+autoType.onchange=()=>{
+  if(autoType.value==="DSL") dsl.classList.remove("hidden");
+  result.classList.remove("hidden");
+};
 
-  blueprintButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      blueprintButtons.forEach(b => b.classList.remove("selected"));
-      btn.classList.add("selected");
-      automationSection.style.display = "block";
+resultType.onchange=()=>{
+  let input=document.getElementById("fileInput");
+
+  if(resultType.value==="Launch"){
+    input.accept=".csv"; input.click();
+  }
+  if(resultType.value==="Delete"){
+    input.accept=".log"; input.click();
+  }
+  if(resultType.value==="Stats"){
+    input.accept=".html"; input.click();
+  }
+};
+
+// FILE
+document.getElementById("fileInput").onchange=(e)=>{
+  let file=e.target.files[0];
+  if(!file) return;
+
+  let type=resultType.value;
+
+  if(type==="Stats"){
+    let r=new FileReader();
+    r.onload=(ev)=>{
+      let html=ev.target.result;
+      let w=window.open();
+      w.document.write(html);
+      w.document.close();
+      parseHTMLStats(html);
+    };
+    r.readAsText(file);
+  }
+  else{
+    file.text().then(t=>{
+      if(type==="Delete") parseDeleteLog(t);
+      else parseCSV(t);
     });
-  });
+  }
+};
 
-  automationType.addEventListener("change", () => {
-    dslIteration.style.display = automationType.value === "DSL" ? "block" : "none";
-    resultSection.style.display = automationType.value ? "block" : "none";
-  });
+// CSV
+function parseCSV(text){
+  document.getElementById("resultTable").style.display="table";
 
-  resultType.addEventListener("change", () => {
-    const iteration = dslIter.value;
+  let lines=text.split("\n");
+  let headers=lines[0].split(",");
+  let lower=headers.map(h=>h.toLowerCase());
 
-    if (resultType.value === "Launch") {
-      if (!iteration) return alert("Select DSL iteration");
-      const gid = iterationToGidMap[iteration];
-      if (gid)
-        window.open(
-          `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${gid}`,
-          "_blank"
-        );
+  let nameIdx=lower.indexOf("app name");
+  let stateIdx=lower.findIndex(h=>h.includes("state"));
+  let uuidIdx=lower.findIndex(h=>h.includes("uuid"));
 
-      // ✅ Trigger CSV selection
-      document.getElementById("csvFileInput").click();
+  let success=0,error=0,rows=[];
+
+  for(let i=1;i<lines.length;i++){
+    let c=lines[i].split(",");
+    let s=c[stateIdx]?.toLowerCase();
+
+    if(s==="running") success++;
+    else if(["error","failed"].includes(s)){
+      error++; rows.push(c);
     }
-  });
-});
-
-// CSV Parsing Logic
-document.getElementById("csvFileInput").addEventListener("change", function (e) {
-  const file = e.target.files[0];
-  if (!file) return;
-
-  const reader = new FileReader();
-  reader.onload = function (event) {
-    const csvText = event.target.result;
-    parseCSV(csvText);
-  };
-  reader.readAsText(file);
-});
-
-function parseCSV(csvText) {
-  const lines = csvText.trim().split("\n");
-  const headers = lines[0].split(",");
-
-  const stateIndex = headers.findIndex(h =>
-    h.trim().toLowerCase() === "state"
-  );
-
-  let success = 0;
-  let error = 0;
-
-  for (let i = 1; i < lines.length; i++) {
-    if (!lines[i]) continue;
-    const cols = lines[i].split(",");
-    const state = cols[stateIndex]?.trim().toLowerCase();
-
-    if (state === "running") success++;
-    else if (state === "error" || state === "failed" || state === "fail")
-      error++;
   }
 
-  document.getElementById("successCount").textContent = success;
-  document.getElementById("errorCount").textContent = error;
-  document.getElementById("csvResultSection").style.display = "block";
+  updateSummary(success,error);
+
+  let head=document.getElementById("errorTableHead");
+  let body=document.getElementById("errorTableBody");
+
+  head.innerHTML="<tr><th>App Name</th><th>State</th><th>UUID</th></tr>";
+  body.innerHTML="";
+
+  rows.forEach(r=>{
+    body.innerHTML+=`<tr>
+      <td>${r[nameIdx]}</td>
+      <td class="error">${r[stateIdx]}</td>
+      <td>${r[uuidIdx]}</td>
+    </tr>`;
+  });
+
+  summary.classList.remove("hidden");
 }
+
+// DELETE
+function parseDeleteLog(text){
+
+  let success=0,error=0;
+
+  text.split("\n").forEach(l=>{
+    l=l.toLowerCase();
+    if(l.includes("deleted successfully")) success++;
+  });
+
+  updateSummary(success,error);
+
+  document.getElementById("resultTable").style.display="none";
+  summary.classList.remove("hidden");
+}
+
+// HTML STATS
+function parseHTMLStats(html){
+
+  let doc=new DOMParser().parseFromString(html,"text/html");
+  let success=0,error=0;
+
+  doc.querySelectorAll("td").forEach(td=>{
+    let t=td.textContent.toLowerCase().trim();
+    if(t==="running") success++;
+    else if(["error","failed"].includes(t)) error++;
+  });
+
+  updateSummary(success,error);
+
+  document.getElementById("resultTable").style.display="none";
+  summary.classList.remove("hidden");
+}
+
+// SUMMARY
+function updateSummary(s,e){
+  let total=s+e;
+
+  document.getElementById("successCount").textContent=s;
+  document.getElementById("errorCount").textContent=e;
+  document.getElementById("totalCount").textContent=total;
+
+  document.getElementById("successPercent").textContent =
+    total?((s/total)*100).toFixed(2)+"%":"0%";
+
+  document.getElementById("errorPercent").textContent =
+    total?((e/total)*100).toFixed(2)+"%":"0%";
+}
+
 </script>
 
 </body>
