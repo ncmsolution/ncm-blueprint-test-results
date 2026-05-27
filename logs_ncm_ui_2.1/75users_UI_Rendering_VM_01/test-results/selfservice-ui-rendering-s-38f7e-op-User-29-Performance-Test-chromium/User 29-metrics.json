@@ -1,0 +1,1002 @@
+{
+  "userLabel": "[User 29]",
+  "testStartTime": 1779786089681,
+  "testEndTime": 1779786160716,
+  "totalDuration": "71.03",
+  "pages": {
+    "Login": {
+      "webVitals": {
+        "stepDurationMs": 4592,
+        "source": "main page",
+        "capturedAt": 1779786096000
+      },
+      "apiPerformance": {
+        "totalCalls": 10,
+        "uniqueEndpoints": 5,
+        "avgResponse": "58.40",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {
+          "https://iam.nconprem-10-122-152-117.ccpnx.com/PrismGateway/services/rest/v1/utils/pre_login_details": {
+            "calls": [
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/PrismGateway/services/rest/v1/utils/pre_login_details",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/PrismGateway/services/rest/v1/utils/pre_login_details",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/PrismGateway/services/rest/v1/utils/pre_login_details",
+                "method": "GET",
+                "status": 200,
+                "duration": 63,
+                "page": "Login"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 63,
+            "minDuration": 63,
+            "maxDuration": 63,
+            "method": "GET",
+            "avg": 63,
+            "min": 63,
+            "max": 63,
+            "p90": 63,
+            "p95": 63
+          },
+          "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner": {
+            "calls": [
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner",
+                "method": "GET",
+                "status": 200,
+                "duration": 7,
+                "page": "Login"
+              },
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/welcome-banner",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Login"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 7,
+            "minDuration": 0,
+            "maxDuration": 7,
+            "method": "GET",
+            "avg": 3.5,
+            "min": 0,
+            "max": 7,
+            "p90": 7,
+            "p95": 7
+          },
+          "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}": {
+            "calls": [
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "method": "GET",
+                "status": 200,
+                "duration": 7,
+                "page": "Login"
+              },
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Login"
+              },
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "method": "PUT",
+                "status": 200,
+                "duration": 7,
+                "page": "Login"
+              },
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Login"
+              }
+            ],
+            "count": 4,
+            "totalDuration": 14,
+            "minDuration": 0,
+            "maxDuration": 7,
+            "method": "GET",
+            "avg": 3.5,
+            "min": 0,
+            "max": 7,
+            "p90": 7,
+            "p95": 7
+          },
+          "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers": {
+            "calls": [
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers?$filter=isBrowserLoginSupported%20eq%20true&$orderby=name",
+                "method": "GET",
+                "status": 200,
+                "duration": 7,
+                "page": "Login"
+              },
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-providers?$filter=isBrowserLoginSupported%20eq%20true&$orderby=name",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Login"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 7,
+            "minDuration": 0,
+            "maxDuration": 7,
+            "method": "GET",
+            "avg": 3.5,
+            "min": 0,
+            "max": 7,
+            "p90": 7,
+            "p95": 7
+          },
+          "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}/$actions/validate-credentials": {
+            "calls": [
+              {
+                "url": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247/$actions/validate-credentials",
+                "normalizedUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/{uuid}/$actions/validate-credentials",
+                "fullUrl": "https://iam.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b3/authn/login-requests/fbcfde84-540c-5287-92d7-1f07c1f06247/$actions/validate-credentials",
+                "method": "POST",
+                "status": 200,
+                "duration": 493,
+                "page": "Login"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 493,
+            "minDuration": 493,
+            "maxDuration": 493,
+            "method": "POST",
+            "avg": 493,
+            "min": 493,
+            "max": 493,
+            "p90": 493,
+            "p95": 493
+          }
+        },
+        "failedDetails": []
+      }
+    },
+    "Global Overview": {
+      "webVitals": {
+        "domContentLoaded": 259.90000000037253,
+        "firstPaint": 268,
+        "firstContentfulPaint": 268,
+        "totalLoadTime": 1628.5,
+        "totalResources": 33,
+        "jsSize": 1374336,
+        "cssSize": 6813,
+        "imageSize": 543724,
+        "stepDurationMs": 6932,
+        "source": "main page",
+        "capturedAt": 1779786103096
+      },
+      "apiPerformance": {
+        "totalCalls": 14,
+        "uniqueEndpoints": 10,
+        "avgResponse": "310.64",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {
+          "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "method": "GET",
+                "status": 200,
+                "duration": 6,
+                "page": "Global Overview"
+              },
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "method": "GET",
+                "status": 200,
+                "duration": 219,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 225,
+            "minDuration": 6,
+            "maxDuration": 219,
+            "method": "GET",
+            "avg": 112.5,
+            "min": 6,
+            "max": 219,
+            "p90": 219,
+            "p95": 219
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps",
+                "method": "POST",
+                "status": 200,
+                "duration": 1066,
+                "page": "Global Overview"
+              },
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/apps",
+                "method": "POST",
+                "status": 200,
+                "duration": 835,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 1901,
+            "minDuration": 835,
+            "maxDuration": 1066,
+            "method": "POST",
+            "avg": 950.5,
+            "min": 835,
+            "max": 1066,
+            "p90": 1066,
+            "p95": 1066
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me",
+                "method": "GET",
+                "status": 200,
+                "duration": 104,
+                "page": "Global Overview"
+              },
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4/authn/users/me",
+                "method": "GET",
+                "status": 200,
+                "duration": 204,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 308,
+            "minDuration": 104,
+            "maxDuration": 204,
+            "method": "GET",
+            "avg": 154,
+            "min": 104,
+            "max": 204,
+            "p90": 204,
+            "p95": 204
+          },
+          "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies": {
+            "calls": [
+              {
+                "url": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies",
+                "normalizedUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies",
+                "fullUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies?$limit=50&$page=0",
+                "method": "GET",
+                "status": 200,
+                "duration": 219,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 219,
+            "minDuration": 219,
+            "maxDuration": 219,
+            "method": "GET",
+            "avg": 219,
+            "min": 219,
+            "max": 219,
+            "p90": 219,
+            "p95": 219
+          },
+          "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles": {
+            "calls": [
+              {
+                "url": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles",
+                "normalizedUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles",
+                "fullUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles?$limit=50&$page=0",
+                "method": "GET",
+                "status": 200,
+                "duration": 219,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 219,
+            "minDuration": 219,
+            "maxDuration": 219,
+            "method": "GET",
+            "avg": 219,
+            "min": 219,
+            "max": 219,
+            "p90": 219,
+            "p95": 219
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "method": "POST",
+                "status": 200,
+                "duration": 220,
+                "page": "Global Overview"
+              },
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "method": "POST",
+                "status": 200,
+                "duration": 136,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 356,
+            "minDuration": 136,
+            "maxDuration": 220,
+            "method": "POST",
+            "avg": 178,
+            "min": 136,
+            "max": 220,
+            "p90": 220,
+            "p95": 220
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains?$page=0&$limit=10&$filter=(apiCredentialStatus+eq+Multidomain.Config.ApiCredentialStatus%27NEAR_EXPIRY%27+or+apiCredentialStatus+eq+Multidomain.Config.ApiCredentialStatus%27EXPIRED%27)+and+registrationState+eq+Multidomain.Common.RegistrationState%27REGISTERED%27",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 0,
+            "minDuration": 0,
+            "maxDuration": 0,
+            "method": "GET",
+            "avg": 0,
+            "min": 0,
+            "max": 0,
+            "p90": 0,
+            "p95": 0
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/alerts": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/alerts",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/alerts",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/alerts",
+                "method": "POST",
+                "status": 200,
+                "duration": 220,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 220,
+            "minDuration": 220,
+            "maxDuration": 220,
+            "method": "POST",
+            "avg": 220,
+            "min": 220,
+            "max": 220,
+            "p90": 220,
+            "p95": 220
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/tasks": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/tasks",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/tasks",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/monitor/domains/tasks",
+                "method": "POST",
+                "status": 200,
+                "duration": 247,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 247,
+            "minDuration": 247,
+            "maxDuration": 247,
+            "method": "POST",
+            "avg": 247,
+            "min": 247,
+            "max": 247,
+            "p90": 247,
+            "p95": 247
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains-utilization-summary": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains-utilization-summary",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains-utilization-summary",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains-utilization-summary",
+                "method": "POST",
+                "status": 200,
+                "duration": 654,
+                "page": "Global Overview"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 654,
+            "minDuration": 654,
+            "maxDuration": 654,
+            "method": "POST",
+            "avg": 654,
+            "min": 654,
+            "max": 654,
+            "p90": 654,
+            "p95": 654
+          }
+        },
+        "failedDetails": []
+      }
+    },
+    "Self Service Navigation": {
+      "webVitals": {
+        "domContentLoaded": 259.90000000037253,
+        "firstPaint": 268,
+        "firstContentfulPaint": 268,
+        "totalLoadTime": 1628.5,
+        "totalResources": 41,
+        "jsSize": 1390633,
+        "cssSize": 6813,
+        "imageSize": 543724,
+        "stepDurationMs": 19898,
+        "source": "main page",
+        "capturedAt": 1779786123002
+      },
+      "apiPerformance": {
+        "totalCalls": 12,
+        "uniqueEndpoints": 9,
+        "avgResponse": "79.25",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/search": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/search",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/search",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/search",
+                "method": "POST",
+                "status": 200,
+                "duration": 0,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 0,
+            "minDuration": 0,
+            "maxDuration": 0,
+            "method": "POST",
+            "avg": 0,
+            "min": 0,
+            "max": 0,
+            "p90": 0,
+            "p95": 0
+          },
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts?passHomePcUuid=true",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Self Service Navigation"
+              },
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts?passHomePcUuid=true",
+                "method": "GET",
+                "status": 200,
+                "duration": 247,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 247,
+            "minDuration": 0,
+            "maxDuration": 247,
+            "method": "GET",
+            "avg": 123.5,
+            "min": 0,
+            "max": 247,
+            "p90": 247,
+            "p95": 247
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/{uuid}": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/424db17c-6210-4a7c-a134-d2f56ca63b73",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/{uuid}",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/424db17c-6210-4a7c-a134-d2f56ca63b73",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 0,
+            "minDuration": 0,
+            "maxDuration": 0,
+            "method": "GET",
+            "avg": 0,
+            "min": 0,
+            "max": 0,
+            "p90": 0,
+            "p95": 0
+          },
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "method": "POST",
+                "status": 200,
+                "duration": 0,
+                "page": "Self Service Navigation"
+              },
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "method": "POST",
+                "status": 200,
+                "duration": 267,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 267,
+            "minDuration": 0,
+            "maxDuration": 267,
+            "method": "POST",
+            "avg": 133.5,
+            "min": 0,
+            "max": 267,
+            "p90": 267,
+            "p95": 267
+          },
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/{uuid}": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/218d5f38-f928-4cbb-6129-6c65439adb4c",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/{uuid}",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/218d5f38-f928-4cbb-6129-6c65439adb4c?filters=",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Self Service Navigation"
+              },
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/218d5f38-f928-4cbb-6129-6c65439adb4c",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/{uuid}",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/opsmgmt/v4/onboarding/accounts/status/218d5f38-f928-4cbb-6129-6c65439adb4c",
+                "method": "GET",
+                "status": 200,
+                "duration": 37,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 2,
+            "totalDuration": 37,
+            "minDuration": 0,
+            "maxDuration": 37,
+            "method": "GET",
+            "avg": 18.5,
+            "min": 0,
+            "max": 37,
+            "p90": 37,
+            "p95": 37
+          },
+          "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies": {
+            "calls": [
+              {
+                "url": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies",
+                "normalizedUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies",
+                "fullUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-authorization-policies?$limit=50&$page=0",
+                "method": "GET",
+                "status": 200,
+                "duration": 0,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 0,
+            "minDuration": 0,
+            "maxDuration": 0,
+            "method": "GET",
+            "avg": 0,
+            "min": 0,
+            "max": 0,
+            "p90": 0,
+            "p95": 0
+          },
+          "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles": {
+            "calls": [
+              {
+                "url": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles",
+                "normalizedUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles",
+                "fullUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authz/user-roles?$limit=50&$page=0",
+                "method": "GET",
+                "status": 200,
+                "duration": 92,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 92,
+            "minDuration": 92,
+            "maxDuration": 92,
+            "method": "GET",
+            "avg": 92,
+            "min": 92,
+            "max": 92,
+            "p90": 92,
+            "p95": 92
+          },
+          "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authn/oidc/userinfo": {
+            "calls": [
+              {
+                "url": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authn/oidc/userinfo",
+                "normalizedUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authn/oidc/userinfo",
+                "fullUrl": "https://iam.services.nconprem-10-122-152-117.ccpnx.com/api/iam/v4.1.b1/authn/oidc/userinfo",
+                "method": "GET",
+                "status": 200,
+                "duration": 247,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 247,
+            "minDuration": 247,
+            "maxDuration": 247,
+            "method": "GET",
+            "avg": 247,
+            "min": 247,
+            "max": 247,
+            "p90": 247,
+            "p95": 247
+          },
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "method": "POST",
+                "status": 200,
+                "duration": 61,
+                "page": "Self Service Navigation"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 61,
+            "minDuration": 61,
+            "maxDuration": 61,
+            "method": "POST",
+            "avg": 61,
+            "min": 61,
+            "max": 61,
+            "p90": 61,
+            "p95": 61
+          }
+        },
+        "failedDetails": []
+      }
+    },
+    "Self Service Home": {
+      "webVitals": {
+        "domContentLoaded": 1125,
+        "firstPaint": 212,
+        "firstContentfulPaint": 212,
+        "totalLoadTime": 1149.2999999998137,
+        "totalResources": 30,
+        "jsSize": 2443677,
+        "cssSize": 96837,
+        "imageSize": 0,
+        "stepDurationMs": 15990,
+        "source": "ch-nc_self_service frame",
+        "capturedAt": 1779786138998
+      },
+      "apiPerformance": {
+        "totalCalls": 0,
+        "uniqueEndpoints": 0,
+        "avgResponse": "0",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {},
+        "failedDetails": []
+      }
+    },
+    "Store": {
+      "webVitals": {
+        "domContentLoaded": 1125,
+        "firstPaint": 212,
+        "firstContentfulPaint": 212,
+        "totalLoadTime": 1149.2999999998137,
+        "totalResources": 38,
+        "jsSize": 2491239,
+        "cssSize": 96837,
+        "imageSize": 1346,
+        "stepDurationMs": 17080,
+        "source": "ch-nc_self_service frame",
+        "capturedAt": 1779786156083
+      },
+      "apiPerformance": {
+        "totalCalls": 6,
+        "uniqueEndpoints": 3,
+        "avgResponse": "151.33",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {
+          "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/{uuid}": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/424db17c-6210-4a7c-a134-d2f56ca63b73",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/{uuid}",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/registered-domains/424db17c-6210-4a7c-a134-d2f56ca63b73",
+                "method": "GET",
+                "status": 200,
+                "duration": 26,
+                "page": "Store"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 26,
+            "minDuration": 26,
+            "maxDuration": 26,
+            "method": "GET",
+            "avg": 26,
+            "min": 26,
+            "max": 26,
+            "p90": 26,
+            "p95": 26
+          },
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "method": "POST",
+                "status": 200,
+                "duration": 151,
+                "page": "Store"
+              },
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "method": "POST",
+                "status": 200,
+                "duration": 237,
+                "page": "Store"
+              },
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "method": "POST",
+                "status": 200,
+                "duration": 66,
+                "page": "Store"
+              },
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "method": "POST",
+                "status": 200,
+                "duration": 261,
+                "page": "Store"
+              }
+            ],
+            "count": 4,
+            "totalDuration": 715,
+            "minDuration": 66,
+            "maxDuration": 261,
+            "method": "POST",
+            "avg": 178.75,
+            "min": 66,
+            "max": 261,
+            "p90": 261,
+            "p95": 261
+          },
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/accounts/list",
+                "method": "POST",
+                "status": 200,
+                "duration": 167,
+                "page": "Store"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 167,
+            "minDuration": 167,
+            "maxDuration": 167,
+            "method": "POST",
+            "avg": 167,
+            "min": 167,
+            "max": 167,
+            "p90": 167,
+            "p95": 167
+          }
+        },
+        "failedDetails": []
+      }
+    },
+    "Store List": {
+      "webVitals": {
+        "domContentLoaded": 1125,
+        "firstPaint": 212,
+        "firstContentfulPaint": 212,
+        "totalLoadTime": 1149.2999999998137,
+        "totalResources": 39,
+        "jsSize": 2491239,
+        "cssSize": 96837,
+        "imageSize": 1346,
+        "stepDurationMs": 2064,
+        "source": "ch-nc_self_service frame",
+        "capturedAt": 1779786158155
+      },
+      "apiPerformance": {
+        "totalCalls": 1,
+        "uniqueEndpoints": 1,
+        "avgResponse": "60.00",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {
+          "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups": {
+            "calls": [
+              {
+                "url": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "normalizedUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "fullUrl": "https://ncm.services.nconprem-10-122-152-117.ccpnx.com/api/nutanix/v3/groups",
+                "method": "POST",
+                "status": 200,
+                "duration": 60,
+                "page": "Store List"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 60,
+            "minDuration": 60,
+            "maxDuration": 60,
+            "method": "POST",
+            "avg": 60,
+            "min": 60,
+            "max": 60,
+            "p90": 60,
+            "p95": 60
+          }
+        },
+        "failedDetails": []
+      }
+    },
+    "Blueprints": {
+      "webVitals": {
+        "domContentLoaded": 1125,
+        "firstPaint": 212,
+        "firstContentfulPaint": 212,
+        "totalLoadTime": 1149.2999999998137,
+        "totalResources": 39,
+        "jsSize": 2491239,
+        "cssSize": 96837,
+        "imageSize": 1346,
+        "stepDurationMs": 2553,
+        "source": "ch-nc_self_service frame",
+        "capturedAt": 1779786160716
+      },
+      "apiPerformance": {
+        "totalCalls": 2,
+        "uniqueEndpoints": 2,
+        "avgResponse": "13.50",
+        "slowRequests": 0,
+        "failedRequests": 0,
+        "byEndpoint": {
+          "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/multidomain/v4.0/config/applications",
+                "method": "GET",
+                "status": 200,
+                "duration": 9,
+                "page": "Blueprints"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 9,
+            "minDuration": 9,
+            "maxDuration": 9,
+            "method": "GET",
+            "avg": 9,
+            "min": 9,
+            "max": 9,
+            "p90": 9,
+            "p95": 9
+          },
+          "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats": {
+            "calls": [
+              {
+                "url": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "normalizedUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "fullUrl": "https://nconprem-10-122-152-117.ccpnx.com/api/nutanix-central/v4.0.a1/resources/domains/stats",
+                "method": "POST",
+                "status": 200,
+                "duration": 18,
+                "page": "Blueprints"
+              }
+            ],
+            "count": 1,
+            "totalDuration": 18,
+            "minDuration": 18,
+            "maxDuration": 18,
+            "method": "POST",
+            "avg": 18,
+            "min": 18,
+            "max": 18,
+            "p90": 18,
+            "p95": 18
+          }
+        },
+        "failedDetails": []
+      }
+    }
+  },
+  "globalMetrics": {
+    "elementTimes": {}
+  }
+}
